@@ -43,11 +43,11 @@ func (app *application) readDepthReport(path string) ([]uint, error) {
 		depth, err := strconv.Atoi(fileScanner.Text())
 
 		if err != nil {
-			return nil, errors.New(fmt.Sprintf("Bad input file format. Could not convert line '%s' to int.\n", fileScanner.Text()))
+			return nil, errors.New(fmt.Sprintf("bad input file format. Could not convert line '%s' to int", fileScanner.Text()))
 		}
 
 		if depth < 0 {
-			return nil, errors.New(fmt.Sprintf("Bad input file. Read negative depth '%d'\n", depth))
+			return nil, errors.New(fmt.Sprintf("bad input file. Read negative depth '%d'", depth))
 		}
 
 		depthReportData = append(depthReportData, uint(depth))
@@ -72,7 +72,7 @@ func (app *application) countSequentialIncrements(sequence []uint) uint {
 // countSequentialWindowSumIncrements counts number if entries where sum of sequence[i - windowSize:i] < sequence[(i+1) - windowSize:i+1]
 func (app *application) countSequentialWindowSumIncrements(sequence []uint, windowSize uint) (uint, error) {
 	if windowSize == 0 {
-		return 0, errors.New(fmt.Sprintf("Invalid window size %d.", windowSize))
+		return 0, errors.New(fmt.Sprintf("invalid window size %d", windowSize))
 	}
 
 	// Special case where window size is larger or equal to sequence length.
@@ -104,7 +104,7 @@ func (app *application) countSequentialWindowSumIncrements(sequence []uint, wind
 }
 
 func main() {
-	var depthFilePath = flag.String("file", "default.txt", "Path to the depth report file.")
+	var depthFilePath = flag.String("file", "input.txt", "Path to the depth report file.")
 	var windowSize = flag.Uint("window-size", 1, "Size of the sum window.")
 	flag.Parse()
 
