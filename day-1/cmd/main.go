@@ -57,7 +57,7 @@ func (app *application) readDepthReport(path string) ([]uint, error) {
 }
 
 // countSequentialIncrements counts number of neighbour entries in a slice where sequence[i - 1] < sequence[i].
-func (app *application) countSequentialIncrements(sequence []uint) uint {
+func countSequentialIncrements(sequence []uint) uint {
 	numIncrements := uint(0)
 
 	for i := 1; i < len(sequence); i++ {
@@ -70,7 +70,7 @@ func (app *application) countSequentialIncrements(sequence []uint) uint {
 }
 
 // countSequentialWindowSumIncrements counts number if entries where sum of sequence[i - windowSize:i] < sequence[(i+1) - windowSize:i+1]
-func (app *application) countSequentialWindowSumIncrements(sequence []uint, windowSize uint) (uint, error) {
+func countSequentialWindowSumIncrements(sequence []uint, windowSize uint) (uint, error) {
 	if windowSize == 0 {
 		return 0, errors.New(fmt.Sprintf("invalid window size %d", windowSize))
 	}
@@ -119,11 +119,11 @@ func main() {
 
 	// Use exercise part 1 solution when window size is 1.
 	if *windowSize == 1 {
-		depthIncrementCount := app.countSequentialIncrements(depthData)
+		depthIncrementCount := countSequentialIncrements(depthData)
 
 		fmt.Printf("There are %d depth increments.\n", depthIncrementCount)
 	} else {
-		depthIncrementCount, err := app.countSequentialWindowSumIncrements(depthData, *windowSize)
+		depthIncrementCount, err := countSequentialWindowSumIncrements(depthData, *windowSize)
 
 		if err != nil {
 			app.log.Fatalf("Encountered an error while counting the window sum increments (%s).", err.Error())

@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/PrimozLavric/advent-of-code-2021/day-2/submarine"
+	submarine2 "github.com/PrimozLavric/advent-of-code-2021/day-2/internal/submarine"
 )
 
 // An application contains application wide data such as Logger.
@@ -19,7 +19,7 @@ type application struct {
 }
 
 type moveInstruction struct {
-	dir      submarine.Direction
+	dir      submarine2.Direction
 	distance uint
 }
 
@@ -56,7 +56,7 @@ func (app *application) readMoveInstructions(filePath string) ([]moveInstruction
 		}
 
 		// Parse direction.
-		dir, err := submarine.MakeDirection(entryFields[0])
+		dir, err := submarine2.MakeDirection(entryFields[0])
 
 		if err != nil {
 			return nil, errors.New(fmt.Sprintf("bad move instructions file (failed to parse row %d direction entry '%s')", rowIdx, entryFields[0]))
@@ -92,8 +92,8 @@ func main() {
 		return
 	}
 
-	subPartOne := submarine.Submarine{}
-	subPartTwo := submarine.Submarine{}
+	subPartOne := submarine2.Submarine{}
+	subPartTwo := submarine2.Submarine{}
 
 	for _, instuct := range instructions {
 		err := subPartOne.MovePartOne(instuct.dir, instuct.distance)
