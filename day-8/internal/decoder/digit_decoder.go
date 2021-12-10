@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"day-8/internal/util"
+	"github.com/PrimozLavric/advent-of-code-2021/day-8/internal/util"
 )
 
 // DigitCount number of different digits.
