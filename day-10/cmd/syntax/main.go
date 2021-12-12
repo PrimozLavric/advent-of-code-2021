@@ -102,7 +102,7 @@ func main() {
 	lines, err := app.readLinesFromFile(*navSubsystemFile)
 
 	if err != nil {
-		app.log.Fatalf("Encountered error during signal patterns file parsing (%s).", err.Error())
+		app.log.Fatalf("Encountered error during navigation subsystem file parsing (%s).", err.Error())
 	}
 
 	app.computeAndPrintSyntaxErrorScore(lines)
