@@ -1,4 +1,4 @@
-module github.com/PrimozLavric/advent-of-code-2021/day-11
+module github.com/PrimozLavric/advent-of-code-2021/day-13
 
 go 1.17
 

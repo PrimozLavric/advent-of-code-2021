@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"day-12/internal/util"
+	"github.com/PrimozLavric/advent-of-code-2021/day-12/internal/util"
 	mapset "github.com/deckarep/golang-set"
 )
 

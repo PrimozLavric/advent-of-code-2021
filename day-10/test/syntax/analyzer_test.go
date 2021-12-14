@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"day-10/internal/syntax"
+	"github.com/PrimozLavric/advent-of-code-2021/day-10/internal/syntax"
 )
 
 func TestComputeAutocompleteScore(t *testing.T) {

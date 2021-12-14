@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"day-11/internal/octopus"
+	"github.com/PrimozLavric/advent-of-code-2021/day-11/internal/octopus"
 )
 
 // TestOctopusSimulatorPartOne tests simulation for the first part of the exercise (number of flashes after N steps)

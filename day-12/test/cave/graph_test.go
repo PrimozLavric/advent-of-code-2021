@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"day-12/internal/cave"
+	"github.com/PrimozLavric/advent-of-code-2021/day-12/internal/cave"
 )
 
 func TestCaveGraphFindAllPathsToEnd(t *testing.T) {

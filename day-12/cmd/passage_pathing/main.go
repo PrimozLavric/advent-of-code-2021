@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	"day-12/internal/cave"
+	"github.com/PrimozLavric/advent-of-code-2021/day-12/internal/cave"
 )
 
 // An application contains application wide data such as Logger.
@@ -43,7 +43,7 @@ func (app *application) readCaveConnections(filePath string) (map[string][]strin
 		connectedCaves := strings.Split(fileScanner.Text(), "-")
 
 		if len(connectedCaves) != 2 || len(connectedCaves[0]) == 0 || len(connectedCaves[1]) == 0 {
-			return nil, errors.New(fmt.Sprintf("failed to parse row %d in energy levels file (%s)", rowNum, err.Error()))
+			return nil, errors.New(fmt.Sprintf("failed to parse row %d in energy levels file", rowNum))
 		}
 
 		connections[connectedCaves[0]] = append(connections[connectedCaves[0]], connectedCaves[1])

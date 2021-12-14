@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	"day-11/internal/octopus"
+	"github.com/PrimozLavric/advent-of-code-2021/day-11/internal/octopus"
 )
 
 // An application contains application wide data such as Logger.

@@ -8,7 +8,7 @@ import (
 	"os"
 	"sort"
 
-	"day-10/internal/syntax"
+	"github.com/PrimozLavric/advent-of-code-2021/day-10/internal/syntax"
 )
 
 // An application contains application wide data such as Logger.
