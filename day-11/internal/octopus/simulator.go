@@ -34,7 +34,6 @@ func NewSimulator(initEnergies [][]uint) (*Simulator, error) {
 	if len(initEnergies) == 0 {
 		return nil, errors.New("energies matrix empty, cannot create Simulator with no energies")
 	}
-
 	// Validate that all rows are of same length.
 	rowLen := len(initEnergies[0])
 
